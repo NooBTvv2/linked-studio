@@ -8,8 +8,7 @@
     --shadow-color: rgb(0, 0, 0);
     --showcase-gap: 30px;
 
-    font-size: var(--font-size);
-    overflow-x: hidden;
+    font-size: var(--font-size);
 }
 
 html {
@@ -18,8 +17,7 @@ html {
 
 body {
     margin: 0px;
-    overflow-x: hidden;
-
+    
     background-color: var(--background-color);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
@@ -53,6 +51,8 @@ nav {
 
     padding-bottom: 0;
     z-index: 100;
+
+overflow-x: hidden;
 }
 
 nav div {
