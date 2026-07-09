@@ -81,34 +81,73 @@ var contributions = [
     },
 ]
 
+var experiences = [
+    {
+        name: "Tower of Descent",
+        desc: "IP is Work in Progress",
+
+        link: "",
+        img: "Images/GameImages/Descent.png",
+        logo: "Images/logos/logo.webp"
+    }
+]
+
 // Actual Code
 
 var get_contcontainer = document.getElementById("contributions-container")
+var get_expcontainer = document.getElementById("experiences-container")
 
 for (let i = 0; i < contributions.length; i++) {
-    var node = `
-        <div class="cd" style="background-image: url(`+ contributions[i].img + `);">
-            <h2>`+ contributions[i].name + `</h2>
-            <p>`+ contributions[i].desc + `</p>
+    var node = `     
+        <div class="cd appear-scale" style="background-image: url(`+contributions[i].img+`)"";>
+            <h2>`+contributions[i].name+`</h2>
+            <p>`+contributions[i].desc+`</p>
 
-            <a href=`+ contributions[i].link + `></a>
-            <img src=`+ contributions[i].logo + ` alt="linked-studioslogo" draggable=false>
+            <a href=`+contributions[i].link+`></a>
+            <img src=`+contributions[i].logo+` alt="linked-studioslogo" draggable=false>
         </div>
     `
     $(get_contcontainer).append(node);
 }
 
+for (let i = 0; i < experiences.length; i++) {
+    var node = `     
+        <div class="cd appear-scale" style="background-image: url(`+experiences[i].img+`)"";>
+            <h2>`+experiences[i].name+`</h2>
+            <p>`+experiences[i].desc+`</p>
+
+            <a href=`+experiences[i].link+`></a>
+            <img src=`+experiences[i].logo+` alt="linked-studioslogo" draggable=false>
+        </div>
+    `
+    $(get_expcontainer).append(node);
+}
+
+//  End of Content addition
+
 var getHam = document.getElementById("nav-ham")
 var linksNav = document.getElementById("nav-links")
 
-let NavActive = linksNav.dataset.isopen === false  
+let NavActive = linksNav.dataset.isopen === false
 
-getHam.addEventListener("pointerdown", () => {
-    NavActive = !NavActive
+getHam.addEventListener("pointerdown", (event) => {
+    if (!NavActive) {
+        linksNav.style.transform = "translateX(0%)"
 
-    if (NavActive) {
-        linksNav.style.transform = "translateX(0%)" 
-    } else {
+        NavActive = true
+    } else if (NavActive) {
+        linksNav.style.transform = "translateX(125%)"
+
+        NavActive = false
+    }
+})
+
+window.addEventListener('resize', () => {
+    let size = window.innerWidth
+
+    if (size > 768 && !NavActive) {
+        linksNav.style.transform = "translateX(0%)"
+    } else if (size < 768 && !NavActive) {
         linksNav.style.transform = "translateX(125%)"
     }
-})  
+})

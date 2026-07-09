@@ -8,7 +8,7 @@
     --shadow-color: rgb(0, 0, 0);
     --showcase-gap: 30px;
 
-    font-size: var(--font-size);
+    font-size: var(--font-size);
 }
 
 html {
@@ -17,12 +17,12 @@ html {
 
 body {
     margin: 0px;
-    
+    overflow-x: hidden;
+
     background-color: var(--background-color);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     color: white;
-    overflow-x: hidden;
 }
 
 main {
@@ -31,7 +31,8 @@ main {
     gap: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
     text-shadow: 0 0 0.2em currentColor;
 }
 
@@ -189,14 +190,14 @@ nav p span {
     background: linear-gradient(to top, #1a1a1a, #1a1a1a00 75%);
 
     border-radius: var(--border-radius);
-    
+
     display: flex;
     flex-wrap: wrap;
 
     color: rgb(255, 255, 255);
 }
 
-#about-us > * {
+#about-us>* {
     width: 50%;
 }
 
@@ -209,7 +210,7 @@ nav p span {
     height: 13em;
 
     transform-style: preserve-3d;
-   
+
     position: relative;
     transform: perspective(5000px) rotateX(var(--rotate3dX)) rotateY(var(--rotate3dY));
 
@@ -268,9 +269,8 @@ nav p span {
 }
 
 .cd {
-    perspective: 1000px;
-
     height: 200px;
+
     background: rgb(97, 36, 36);
     overflow: hidden;
 
@@ -278,9 +278,11 @@ nav p span {
     background-position: center;
 
     border-radius: calc(var(--border-radius) / 2);
-
     position: relative;
-    transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+
+    inset: 0;
+
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
 }
 
 .cd::before {
@@ -298,8 +300,7 @@ nav p span {
     transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
-.cd>h2,
-p {
+.cd>h2,p {
     margin: 20px;
     text-align: left;
     transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
@@ -320,10 +321,21 @@ p {
 }
 
 .cd a {
-    position: absolute;
+    background-color: red;
     inset: 0;
 
-    z-index: 2;
+    position: relative;
+    z-index: 3;
+}
+
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#contact > a {
+    text-decoration: none;
 }
 
 .info-dump {
@@ -331,17 +343,13 @@ p {
     text-align: center;
 }
 
-.info-dump h1 + p{
+.info-dump h1+p {
     width: 100%;
 }
 
 .info-dump button {
     margin: 30px;
 }
-
-/* Content Toggle */
-
-/* Services */
 
 
 /* Footer */
@@ -360,7 +368,7 @@ footer {
 /* Media Queries */
 
 @media screen and (min-width: 1400px) {
-    .showcase section>div {
+    .cd {
         width: calc(25% - var(--showcase-gap));
     }
 
@@ -370,19 +378,19 @@ footer {
 }
 
 @media screen and (max-width: 1400px) {
-    .showcase section>div {
+    .cd {
         width: calc(33% - var(--showcase-gap));
     }
 }
 
 @media screen and (max-width: 1000px) {
-    .showcase section>div {
+    .cd {
         width: calc(50% - var(--showcase-gap));
     }
 }
 
 @media screen and (max-width: 600px) {
-    .showcase section>div {
+    .cd {
         width: 100%;
     }
 }
@@ -403,7 +411,7 @@ footer {
     nav {
         display: flex;
         flex-wrap: wrap;
-       
+
         padding-bottom: 0;
     }
 
@@ -426,11 +434,11 @@ footer {
         transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
     }
 
-    .links > a {
+    .links>a {
         overflow: hidden;
         width: 100%;
         position: relative;
-        
+
         background-color: rgba(0, 0, 0, 0.664);
 
         padding: 15px;
@@ -441,8 +449,8 @@ footer {
         transform-origin: center top;
         transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
     }
-    
-    .links > a::before {
+
+    .links>a::before {
         content: "";
         position: absolute;
 
@@ -460,12 +468,15 @@ footer {
         display: none;
     }
 
-    #about-us > *{
-       width: 100%;
+    #about-us>* {
+        width: 100%;
+    }
+
+    #contact button {
+        width: 100%;
     }
 
     .cascade-container {
         margin-top: 75px;
     }
 }
-

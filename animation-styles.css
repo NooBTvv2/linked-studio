@@ -16,23 +16,49 @@
     transform: rotateX(100deg);
 }
 
-.cd:hover h2 {
-    transform: translateY(30px);
-    opacity: 0;
-}
-
-.cd:hover p {
+.cd:hover h2, .cd:hover p {
     transform: translateY(30px);
     opacity: 0;
 }
 
 .cd:hover {
-    transform: scale(1.1);
+    transform: scale(0.9);
 }
 
 .nav-toggle:checked~.links {
     display: none;
 }
+
+
+/* Animation Vars */
+ 
+@keyframes appearabove {
+    from {
+        opacity: 0;
+
+        transform: translateY(100px) scale(0);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animation Initiator */
+
+.appear-scale {
+    opacity: 0;
+
+    animation: appearabove 0.6s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    animation-delay: calc(calc(sibling-index()-1)*250ms);
+   
+    timeline-trigger: --appearabove-trigger view();
+    animation-trigger: --appearabove-trigger play-once none;
+}
+
+/* Medias */
 
 @media screen and (min-width: 768px) {
     .links a:hover {
@@ -53,5 +79,9 @@
         z-index: 2;
         backdrop-filter: blur(15px);
     }
+
+}
+
+@media (pointer: coarse) and (hover: none) {
 
 }
