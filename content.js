@@ -84,12 +84,30 @@ var contributions = [
 var experiences = [
     {
         name: "Tower of Descent",
-        desc: "IP is Work in Progress",
+        desc: "IP is Work in Progress (Horror)",
 
         link: "",
         img: "Images/GameImages/Descent.png",
         logo: "Images/logos/logo.webp"
-    }
+    },
+
+    {
+        name: "Legend of Alteria",
+        desc: "IP is Work in Progress (RPG)",
+
+        link: "",
+        img: "Images/GameImages/LA.png",
+        logo: "Images/logos/logo.webp"
+    },
+
+    {
+        name: "Southside",
+        desc: "IP is Work in Progress (GTA V inspired game)",
+
+        link: "",
+        img: "Images/GameImages/SS.png",
+        logo: "Images/logos/logo.webp"
+    },
 ]
 
 // Actual Code
@@ -99,12 +117,18 @@ var get_expcontainer = document.getElementById("experiences-container")
 
 for (let i = 0; i < contributions.length; i++) {
     var node = `     
-        <div class="cd appear-scale" style="background-image: url(`+contributions[i].img+`)"";>
-            <h2>`+contributions[i].name+`</h2>
-            <p>`+contributions[i].desc+`</p>
+        <div>
+            <section class="cd appear-scale" style="background-image: url(`+contributions[i].img+`)">
+            <a href="`+contributions[i].link+`"></a>
 
-            <a href=`+contributions[i].link+`></a>
-            <img src=`+contributions[i].logo+` alt="linked-studioslogo" draggable=false>
+            <img src="`+contributions[i].img+`">
+            <div>
+                <h2>`+contributions[i].name+`</h2>
+                <p>`+contributions[i].desc+`</p>
+
+                <img src="`+contributions[i].logo+`">
+            </div>
+            </section>
         </div>
     `
     $(get_contcontainer).append(node);
@@ -112,12 +136,18 @@ for (let i = 0; i < contributions.length; i++) {
 
 for (let i = 0; i < experiences.length; i++) {
     var node = `     
-        <div class="cd appear-scale" style="background-image: url(`+experiences[i].img+`)"";>
-            <h2>`+experiences[i].name+`</h2>
-            <p>`+experiences[i].desc+`</p>
+        <div>
+            <section class="cd appear-scale" style="background-image: url(`+experiences[i].img+`)">
+            <a href="`+experiences[i].link+`"></a>
 
-            <a href=`+experiences[i].link+`></a>
-            <img src=`+experiences[i].logo+` alt="linked-studioslogo" draggable=false>
+            <img src="`+experiences[i].img+`">
+            <div>
+                <h2>`+experiences[i].name+`</h2>
+                <p>`+experiences[i].desc+`</p>
+
+                <img src="`+experiences[i].logo+`">
+            </div>
+            </section>
         </div>
     `
     $(get_expcontainer).append(node);

@@ -1,21 +1,28 @@
-const cascadeems = document.querySelectorAll('.cascade-container')
+if (navigator.userAgentData && navigator.userAgentData.mobile) {
+    console.log('user is on mobile')
+} else {
+    console.log('user is on pc')
 
-cascadeems.forEach(element => {
-    document.addEventListener("mousemove", (event) => {
-        rotate3d(event, element)
-    })    
-});
+    const cascadeems = document.querySelectorAll('.cascade-container')
 
-function rotate3d(event, element) {
-    const x = event.clientX;
-    const y = event.clientY;
+    cascadeems.forEach(element => {
+        document.addEventListener("mousemove", (event) => {
+            rotate3d(event, element)
+        })
+    });
 
-    const midX = window.innerWidth /2 ;
-    const midY = window.innerHeight / 2;
+    function rotate3d(event, element) {
+        const x = event.clientX;
+        const y = event.clientY;
 
-    const offsetX = ((x - midX) / midX)*20
-    const offsetY = ((y - midY) / midY)*20
-    
-    element.style.setProperty("--rotate3dX", -1 * offsetY + "deg")
-    element.style.setProperty("--rotate3dY", offsetX + "deg")
+        const midX = window.innerWidth / 2;
+        const midY = window.innerHeight / 2;
+
+        const offsetX = ((x - midX) / midX) * 20
+        const offsetY = ((y - midY) / midY) * 20
+
+        element.style.setProperty("--rotate3dX", -1 * offsetY + "deg")
+        element.style.setProperty("--rotate3dY", offsetX + "deg")
+    }
 }
+
