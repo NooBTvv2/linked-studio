@@ -1,0 +1,11 @@
+html {
+    --main-color: rgb(129, 183, 193);
+    --accent-color: rgb(139, 180, 218);
+
+    --background-color: rgb(22, 22, 22);
+}
+
+#about-container {
+    padding: 30px;
+    color: white;
+} 

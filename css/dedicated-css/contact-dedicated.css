@@ -1,0 +1,74 @@
+html {
+    --main-color: rgb(129, 183, 193);
+    --accent-color: rgb(139, 180, 218);
+
+    --background-color: rgb(22, 22, 22);
+}
+
+.contact-container {
+    /* background-color: var(--background-color); */
+
+    backdrop-filter: blur(5px);
+
+    padding: 30px;
+    margin: 30px;
+
+    border-radius: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    color: white;
+
+    box-shadow:
+        5px -5px 10px rgba(50, 50, 50, 0.5),
+        -5px 5px 10px rgba(0, 0, 0, 0.5);
+
+    width: clamp(300px, 80%, 800px);
+
+    z-index: 3;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+}
+
+.contact-container>* {
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-form>* {
+    width: 100%;
+    padding: 10px;
+}
+
+.contact-form input, textarea{
+    background-color: transparent;
+    border: 2px rgb(60, 60, 60) solid;
+
+    border-radius: 10px;
+    color: white;
+
+    outline: none;
+}
+
+.contact-form input:focus, textarea:focus {
+    border: 2px var(--accent-color) solid;
+    box-shadow: 0px 0px 10px var(--accent-color);
+}
+
+.contact-form > button {
+    width: 50%;
+}
