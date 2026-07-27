@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linked Studios - Contact Us</title>
+    <title>Linked Studios - About Us</title>
 
     <link rel="icon" href="Images/logos/logo.webp" type="image/webp">
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/background-framework.css">
 
-    <link rel="stylesheet" href="css/dedicated-css/contact-dedicated.css">
+    <!-- Dedicated Shit -->
+    <link rel="stylesheet" href="css/dedicated-css/aboutus-dedicated.css">
 </head>
 
 <body>
@@ -28,35 +29,14 @@
 
         <div class="links">
             <a href="index.html" class="inner-expand-button">Home</a>
-            <a href="about.html" class="inner-expand-button">About Us</a>
+            <a href="contact.html" class="inner-expand-button">Contact Us</a>
             <a href="services.html" class="inner-expand-button">Services</a>
             <a href="signup.html" class="inner-expand-button">Log in</a>
         </div>
     </nav>
-
-    <main>
-        <div class="contact-container">
-            <h2>Get In Touch</h2>
-            <p>Have a project in mind? Let's discuss how we can help.</p>
-
-            <form class="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" rows="5" required></textarea>
-
-                <button style="border: 1px white solid;" type="submit" class="submit-btn inner-expand-button">Send Message</button>
-            </form>
-        </div>
-
-        <div class="container">
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
-        </div>
-    </main>
-
-    <footer>
-        <p style="text-align: center; width: 100%;">© 2026 Linked Studios. All rights reserved.</p>
+    <section id="logo-intro">
+        <p>Linked <span>Studios</span></p>
+        <p>All in one destination for Roblox Developers</p>
 
         <div class="socials-list">
             <a href="https://x.com/BriishLord">
@@ -91,6 +71,51 @@
                 </svg>
             </a>
         </div>
+
+        <div class="container">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+        </div>
+    </section>
+
+    <section id="start-info">
+        <div class="intro">
+
+            <article class="threeD-container ">
+                <h2>Hello World</h2>
+                <p>Welcome to Linked Studios, where we create immersive and engaging game experiences!</p>
+                <button onclick="window.location.href='contact.html';" style="border: 1px white solid;"
+                    class="inner-expand-button">Contact Us</button>
+            </article>
+
+        </div>
+
+        <div class="about-us">
+
+            <article class="threeD-container">
+                <h2>Who are we?</h2>
+                <p>We are a passionate game development studio dedicated to creating immersive and engaging
+                    experiences, as well as lending our skills to various projects.</p>
+                <button onclick="window.location.href='about.html';" style="border: 1px white solid;"
+                    class="inner-expand-button">Learn More</button>
+            </article>
+
+        </div>
+    </section>
+
+    <article id="about-container">
+        <h2>About Us</h2>
+        <p>We are a passionate game development studio dedicated to creating immersive and engaging
+            experiences, as well as lending our skills to various projects.</p>
+
+        <p>We have employees across the globe.</p>
+        <button onclick="window.location.href='services.html';" style="border: 1px white solid;"
+            class="inner-expand-button">See our works</button>
+    </article>
+
+    <footer>
+        <p style="text-align: center; width: 100%;">© 2026 Linked Studios. All rights reserved.</p>
     </footer>
 </body>
 
